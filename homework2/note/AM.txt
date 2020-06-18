@@ -1,0 +1,26 @@
+git config --list 查看配置
+git config --global user.name "GGBOMD" (git config --global user.name "GGBOMD")  配置用户姓名和邮箱，重新修改信息命令相同
+note1: config 的作用域
+缺省等同于 local，优先级：local > global > system
+$ git config --local （local 只对仓库有效）
+$ git config --global（global 对登录用户所有仓库有效）
+$ git config --system（system 对系统的所有用户有效）
+
+显示 config 的配置，加--list
+$ git config --list --local
+$ git config --list --global
+$ git config --list --system
+
+在Windows中可以创建一个文件夹目录，接着在该目录下运行bash(右键点击运行bash或者cd进入目录)，写入命令
+git init 初始化本地库（git init test2 就会在当前目录下创建一个test2的仓库即目录，）
+在bash中可以通过cd来访问文件目录
+ls -l 显示当前的文件目录下文件
+ls -la 显示当前目录下的文件（包括隐藏文件）
+pwd 显示当前路径
+
+版本管理流程：工作目录->暂存区->版本历史
+touch可以创建文件，可以使用vim编辑文件，cat查看文件(类似于Linux)
+git add 文件名 提交到暂存区
+git status 查看状态
+git commit -m "note"  将暂存区的文件提交
+git restore --staged <file>..." to unstage

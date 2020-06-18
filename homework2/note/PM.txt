@@ -1,0 +1,35 @@
+与远程仓库连接：
+git remote -v  #查看当前目录建立联系的远程仓库
+git remote rm origin #解除当前目录与远程仓库的联系
+git remote add origin https://远程仓库地址  #连接远程仓库
+git push -u origin master {登录账号，密码（首次）}
+
+如果远程仓库有更新的情况，直接push本地仓库的话，会报错
+error：{To https://github.com/GGBOMD/test.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/GGBOMD/test.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.}
+解决办法是：先执行git pull 再执行git push
+note：为避免错误，一般在push前先pull
+
+git  clone https://克隆地址  #克隆远程仓库
+
+更改文件名操作：
+一、
+mv README.txt README.md
+git add README.md
+git rm README.txt
+git commit -m "rename readme"
+
+二、
+git mv README.txt README.md
+git commit -m "rename readme"
+
+note:两种方法都只对本地仓库做出修改，如果需要提交需要push
+
+回滚：
+git reset --hard 版本号
