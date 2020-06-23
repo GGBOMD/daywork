@@ -17,6 +17,7 @@
         =
         <input type="text" disabled id="result">
         <button type="button" id="btn">计算</button>
+        <input type="text" disabled id="remem">
     </form>
 
     <script>
@@ -37,6 +38,9 @@
         // 获取运算符的select元素对象，并赋值给变量oYsf
         var oYsf = document.getElementById('ysf')
 
+        // 获取记忆框
+        var oRem = document.getElementById('remem')
+
         var sYsf = "+" // 用来存储运算符号的，默认值是+
 
         // 2、 给下拉框select元素绑定鼠标切换事件——onchange
@@ -51,16 +55,13 @@
             sYsf = oYsf.options[index].value
         }
 
-        
-        oNumone.onmouseout = function(){
-            if(oNumone.value==''){
-                oResult.value = "";
-            }
+        oNumone.onchange = function(){
+            oResult.value = "";
         }
         //判断除数是否为零
         
         oNumtwo.onmouseout = function(){
-            if(oNumtwo.value==''){
+            oNumtwo.onchange = function(){
                 oResult.value = "";
             }
 
@@ -93,8 +94,8 @@
             var numone = parseFloat(sNumone)
             var numtwo = parseFloat(sNumtwo)
 
+            oNumtwo.placeholder = "第二个数";
             // 根据运算符号实现计算逻辑，并计算出结果
-
             switch(sYsf) {
                 case "+" :
                     result = numone + numtwo
@@ -112,6 +113,7 @@
 
             // 显示计算结果
             oResult.value = result
+            oRem.value = numone+sYsf+numtwo+'='+result
         }
 
     </script>
