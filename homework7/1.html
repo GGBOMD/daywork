@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a = 1 && 2 && 3; // 3 
+        var b = 0 && 1 && 2; // 0
+        var c = 1 && 0 && 2; // 0
+        console.log(a, b, c);
+        /*  对象为true；
+            非零数字为true；
+            零为false;
+            非空字符串为true；
+            空字符串为法false;
+            其他为false；*/
+
+        /*
+            表达式a && 表达式b :  计算表达式a（也可以是函数）的运算结果，
+            如果为 True, 执行表达式b（或函数），并返回b的结果；
+            如果为 False，返回a的结果
+        */
+    </script>
+</body>
+</html>
+

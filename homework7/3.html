@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var g =  1 && 2 || 3;// 2
+        var h =  1 || 2 && 3;// 1
+        var i =  0 || 2 && 3;// 3
+        console.log(g, h, i);
+        /*
+            逻辑与的优先级是高于逻辑或的
+        */
+    </script>
+</body>
+</html>
