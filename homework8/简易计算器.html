@@ -80,7 +80,7 @@
             var sNumone = oNumone.value
             var sNumtwo = oNumtwo.value
 
-            if(sNumone==''||sNumtwo==''){
+            if(sNumone.replace(/(^\s*)|(\s*$)/g, "")==''||sNumtwo.replace(/(^\s*)|(\s*$)/g, "")==''){
                 alert("输入框不可为空");
                 return;
             }
