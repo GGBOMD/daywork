@@ -51,9 +51,19 @@
             sYsf = oYsf.options[index].value
         }
 
+        
+        oNumone.onmouseout = function(){
+            if(oNumone.value==''){
+                oResult.value = "";
+            }
+        }
         //判断除数是否为零
         
         oNumtwo.onmouseout = function(){
+            if(oNumtwo.value==''){
+                oResult.value = "";
+            }
+
             if(sYsf=="/" && oNumtwo.value=='0'){
                 console.log(sYsf+"|"+oNumtwo.value)
                 oNumtwo.placeholder = "非法输入，请重新输入"
